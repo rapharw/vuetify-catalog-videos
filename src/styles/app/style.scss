@@ -1,0 +1,61 @@
+/* Remove in 1.2 */
+.v-datatable thead th.column.sortable i {
+  vertical-align: unset;
+}
+
+.v-list__tile {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.v-input {
+  font-size: 13px;
+  text-align: left;
+}
+
+.v-avatar .v-icon,
+.v-avatar .v-image,
+.v-avatar span img {
+  border: 1px solid #d0d0d0;
+  -webkit-background-size: 32px 32px !important;
+  background-size: 32px 32px !important;
+  -webkit-border-radius: 50% !important;
+  border-radius: 50% !important;
+  display: block !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  height: 42px !important;
+  width: 42px !important;
+  z-index: 0 !important;
+}
+
+
+div .v-list__tile.v-list__tile--avatar.theme--dark {
+  padding-top: 5px !important;
+  padding-right: 0px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.v-text-field__slot label.v-label {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  color: grey !important;
+}
+
+.v-label {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  color: grey !important;
+}
+
+.descricaoItem {
+  font-size: 0.9em !important;
+  color: rgb(3, 18, 85);
+  padding: 2px;
+}

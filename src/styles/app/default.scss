@@ -1,0 +1,71 @@
+  /**
+  Expansion Painel
+  **/
+.v-expansion-panel-no-shadow{
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+   }
+   .v-expansion-panel-no-shadow{
+    border: 1px !important;                          
+   }
+
+   .v-expansion-panel-form-no-shadow{
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+   }
+
+   .v-expansion-panel-form-no-shadow{
+    border: none !important;
+   }
+
+//    .v-expansion-panel__header  {
+//       background-color: #BDBDBD
+//   }
+  
+//   .v-expansion-panel__header  div {
+//       color: white
+//   }  
+  
+  .theme--light.v-expansion-panel .v-expansion-panel__container .v-expansion-panel__header .v-expansion-panel__header__icon .v-icon {
+      color: white;
+  }
+
+
+  /**
+  CTPS
+  **/
+
+  // CTPS INPUT TEXT
+.input_ctps.theme--light.v-input:not(.v-input--is-disabled) input {
+    color: #495057;
+    font-size: 13px;
+     font-weight: 300;
+    padding: 1px 0;
+}
+.input_ctps.v-text-field input {
+    padding: 1px 0;
+}
+
+//CTPS TABLE
+.table-ctps.table.v-table tbody td {
+    font-weight: 300;
+    font-size: 13px;
+}
+.table-ctps.table.v-table thead tr {
+    height: 10px;
+}
+.table-ctps.table.v-table tbody td, table.v-table tbody th {
+    height: 20px;
+}
+.table-ctps.table.v-table tbody td:first-child, table.v-table tbody td:not(:first-child), table.v-table tbody th:first-child, table.v-table tbody th:not(:first-child), table.v-table thead td:first-child, table.v-table thead td:not(:first-child), table.v-table thead th:first-child, table.v-table thead th:not(:first-child) {
+    padding: 0 8px;
+}
+
+ /**
+  Botoões
+  **/
+.v-icon-righ{
+    padding-right: 5px
+}
