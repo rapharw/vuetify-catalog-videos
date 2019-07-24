@@ -20,16 +20,16 @@ export const mixinUploadComputed = {
         },
         title() {
             if (this.videoToEdit !== null) {
-                return "Edição de vídeo";
+                return "Edit";
             } else {
-                return "Upload de vídeos";
+                return "Upload";
             }
         },
         subtitle() {
             if (this.videoToEdit !== null) {
-                return "Realize as alterações do vídeo";
+                return "Edit your video";
             } else {
-                return "Informações de upload de vídeo";
+                return "Basic info";
             }
         },
         iconTitle() {

@@ -56,7 +56,7 @@
                             @goBack="dialogRemove = false"
                           ></helper-modal-confirmation>
                         </div>
-                        <br>
+                        <br />
                       </v-flex>
 
                       <v-flex xs12 v-if="videoToEdit !== null">
@@ -66,7 +66,7 @@
                           color="secondary"
                           outline
                         >Selecione um novo vídeo e/ou uma nova imagem para alterar as informações atuais da mídia.</v-alert>
-                        <br>
+                        <br />
                         <v-divider></v-divider>
                       </v-flex>
 
@@ -198,8 +198,8 @@
                           Arquivo de vídeo 120MB aprox.
                           <small>(mp4, webm, ogv)</small>
                         </label>
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         <input
                           type="file"
                           data-max-size="2097152"
@@ -207,7 +207,7 @@
                           @change="processVideo($event)"
                           required
                           name="arquivoVideo"
-                        >
+                        />
                         <helper-critica-input
                           v-show="fileVideo === null"
                           critica="O arquivo de vídeo é obrigatório"
@@ -220,8 +220,8 @@
                           Arquivo da imagem 1MB aprox.
                           <small>(jpg, jpeg, png)</small>
                         </label>
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         <input
                           type="file"
                           accept=".jpg, .jpeg, .png"
@@ -229,7 +229,7 @@
                           @change="processImage($event)"
                           required
                           name="arquivoImagem"
-                        >
+                        />
                         <helper-critica-input
                           v-show="fileImage === null"
                           critica="O arquivo de imagem é obrigatório"

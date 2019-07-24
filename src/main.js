@@ -5,6 +5,7 @@ import "./plugins/vuetify";
 import Axios from "axios";
 import VueAxios from "vue-axios";
 import "vue-material/dist/vue-material.min.css";
+import "vue2-dropzone/dist/vue2Dropzone.min.css";
 
 //Cookies
 import VueCookies from "vue-cookies";

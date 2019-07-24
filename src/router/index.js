@@ -38,6 +38,11 @@ const router = new Router({
       component: () => import(`@/views/catalog/HomeVideo.vue`)
     },
     {
+      path: "/uploadv2",
+      name: "uploadv2",
+      component: () => import(`@/views/upload/HomeUpload.vue`)
+    },
+    {
       path: "/upload",
       name: "Upload",
       component: () => import(`@/views/upload/UploadVideo.vue`)

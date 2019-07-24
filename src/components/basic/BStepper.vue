@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-stepper dark v-for="item in itemsStepper" :key="item.step" v-model="step" vertical>
+    <v-stepper v-for="item in itemsStepper" :key="item.step" v-model="step" vertical>
       <v-stepper-step :complete="step > item.step" :step="item.step">
         {{item.name}}
         <small>{{item.desc}}</small>
@@ -10,6 +10,8 @@
         <div>
           <slot :name="stepperContent + item.step"></slot>
         </div>
+        <br />
+        <br />
         <v-btn outline flat @click="backStep">Back</v-btn>
         <v-btn color="primary" @click="continueStep">Continue</v-btn>
       </v-stepper-content>
@@ -64,5 +66,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.theme--light.v-stepper {
+  box-shadow: none !important;
+}
+
+.v-stepper--vertical {
+  /* padding-bottom: 36px; */
+  margin-left: -30px;
+  margin-right: -30px;
+}
 </style>
