@@ -43,12 +43,12 @@
                       <v-flex lg8 md6 sm6 xs12 v-if="videoToEdit !== null">
                         <div class="text-xs-right">
                           <v-btn color="error" round @click="dialogRemove = true">
-                            <v-icon left dark>delete</v-icon>Deletar vídeo
+                            <v-icon left dark>delete</v-icon>Delete
                           </v-btn>
                           <helper-modal-confirmation
-                            title="Deleção de vídeo"
-                            text="Este vídeo será <strong class='body-2'>permanentemente removido</strong>, assim como todos os dados referentes a ele. A ação <strong class='body-2'>não pode ser desfeita</strong>."
-                            textButton="Deletar"
+                            title="Delete Video"
+                            text="This video will be <strong class='body-2'>permanently removed</strong>, with the all information about him. This action <strong class='body-2'>cannot be undone</strong>."
+                            textButton="Delete"
                             icon="delete"
                             color="error"
                             :dialog="dialogRemove"

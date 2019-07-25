@@ -9,14 +9,14 @@
             <div class="primary--text title font-weight-regular">{{item.titulo}}</div>
 
             <div class="descricaoItem">
-              Enviado em
+              Created on
               <span class="font-weight-regular">{{formatData(item.dataInclusao)}}</span>
             </div>
             <div class="descricaoItem">
-              Vigência: {{formatData(item.dataPublicacao)}}
+              From: {{formatData(item.dataPublicacao)}}
               <span
                 v-if="item.dataFinal !== null"
-              >até {{formatData(item.dataFinal)}}</span>
+              >Until: {{formatData(item.dataFinal)}}</span>
             </div>
           </div>
         </v-card-title>
@@ -32,7 +32,7 @@
             v-if="!hover"
           >
             <v-btn flat>
-              <span class="btn-ver-mais">Ver mais</span>
+              <span class="btn-ver-mais">More</span>
               <v-icon class="btn-ver-mais">expand_less</v-icon>
             </v-btn>
           </v-bottom-nav>
@@ -69,11 +69,11 @@
               <v-icon>near_me</v-icon>
             </v-btn>
             <v-btn flat @click="hover = false">
-              <span>Ver menos</span>
+              <span>Less</span>
               <v-icon>expand_more</v-icon>
             </v-btn>
             <v-btn flat @click="modalEdit(item)">
-              <span>Editar</span>
+              <span>Edit</span>
               <v-icon>edit</v-icon>
             </v-btn>
           </v-bottom-nav>

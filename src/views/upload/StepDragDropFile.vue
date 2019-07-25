@@ -11,7 +11,7 @@
     class="dropzone-custom"
   >
     <div class="dropzone-custom-content">
-      <v-icon large>cloud_upload</v-icon>
+      <v-icon x-large color="primary">cloud_upload</v-icon>
       <h3 class="dropzone-custom-title primary--text">Drag and drop to upload content!</h3>
       <div class="subtitle">...or click to select a file from your computer</div>
     </div>
@@ -54,5 +54,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.v-icon.material-icons.theme--light.primary--text {
+  font-size: 55px !important;
+  color: #6d6d6d !important;
+}
+.v-icon.material-icons.theme--light.primary--text:hover {
+  color: #1e90ca !important;
+}
 </style>

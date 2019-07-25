@@ -11,64 +11,26 @@
         <BasicFormStepper :itemsStepper="arraySteps">
           <!-- Step 1 -->
           <div slot="stepper-content-1">
-            <UploadStepDragDropFile :dropOptions="dropOptions"></UploadStepDragDropFile>
-            <!-- <vue-dropzone
-              :useCustomSlot="true"
-              id="dropzone"
-              ref="dropzone"
-              :options="dropOptions"
-              @vdropzone-complete="afterComplete"
-              @vdropzone-removed-file="removedFile"
-              @vdropzone-file-added="added"
-              @vdropzone-total-upload-progress="progress"
-              class="dropzone-custom"
-            >
-              <div class="dropzone-custom-content">
-                <h3 class="dropzone-custom-title primary--text">Drag and drop to upload content!</h3>
-                <div class="subtitle">...or click to select a file from your computer</div>
-              </div>
-            </vue-dropzone>-->
+            <UploadStepDragDropFile
+              :dropOptions="dropOptions"
+              @afterComplete="afterComplete"
+              @removedFile="removedFile"
+              @added="added"
+              @progress="progress"
+            ></UploadStepDragDropFile>
           </div>
 
           <!-- Step 2 -->
           <div slot="stepper-content-2">
-            <v-layout row wrap>
-              <v-flex xs12 lg5 md7 sm12 v-if="srcvideo !== null && typevideo !== null">
-                <video width="400" class="video-border elevation-12" controls>
-                  <source :src="selectedVideo" :type="selectedTypeVideo" />
-                </video>
-              </v-flex>
-              <v-flex xs12 lg7 md5 sm12 class="padding-basic-info">
-                <v-text-field
-                  v-model="tituloVideo"
-                  :rules="[v => !!v || 'Title is required']"
-                  label="Title"
-                  name="titulo"
-                  required
-                  autocomplete="off"
-                ></v-text-field>
-                <v-textarea
-                  :rules="[v => !!v || 'Description is required']"
-                  required
-                  autocomplete="off"
-                  label="Description"
-                ></v-textarea>
-                <v-text-field
-                  v-model="tags"
-                  label="Tags (pressione 'Enter' para inserir a tag)"
-                  :rules="[v => !!v || 'Informe ao menos 1 tag']"
-                  name="tags"
-                  required
-                  @keypress="addTag"
-                  @blur="blurTag"
-                ></v-text-field>
-
-                <!-- Upload chip -->
-                <span v-if="arrayTags.length > 0">
-                  <v-chip close @input="removeTag(tag)" v-for="tag in arrayTags" :key="tag">{{tag}}</v-chip>
-                </span>
-              </v-flex>
-            </v-layout>
+            <UploadStepBasicInfoVideo
+              v-if="srcvideo !== null && typevideo !== null"
+              :arrayTags="arrayTags"
+              :srcvideo="selectedVideo"
+              :typevideo="selectedTypeVideo"
+              @addTag="addTag"
+              @blurTag="blurTag"
+              @removeTag="removeTag"
+            ></UploadStepBasicInfoVideo>
           </div>
 
           <!-- Step 3 -->
@@ -110,9 +72,19 @@
 
           <!-- Final Step -->
           <div slot="stepper-content-4">
-            <v-layout row wrap class="text-xs-center">
+            <v-layout
+              row
+              wrap
+              class="text-xs-center"
+              v-if="srcvideo !== null && typevideo !== null && srcimage !== null"
+            >
               <v-flex xs12>
-                <video width="400" class="video-border elevation-12" controls :poster="srcimage">
+                <video
+                  width="600"
+                  class="video-border elevation-12"
+                  controls
+                  :poster="selectedImage"
+                >
                   <source :src="selectedVideo" :type="selectedTypeVideo" />
                 </video>
               </v-flex>
@@ -131,13 +103,15 @@ import CardTemplate from "@/templates/CardTemplate.vue";
 import vueDropzone from "vue2-dropzone";
 import HelperDatePicker from "@/components/helper/DatePicker.vue";
 import UploadStepDragDropFile from "@/views/upload/StepDragDropFile.vue";
+import UploadStepBasicInfoVideo from "@/views/upload/StepBasicInfoVideo.vue";
 export default {
   components: {
     BasicFormStepper,
     vueDropzone,
     CardTemplate,
     HelperDatePicker,
-    UploadStepDragDropFile
+    UploadStepDragDropFile,
+    UploadStepBasicInfoVideo
   },
   mounted() {},
   data() {
@@ -279,6 +253,9 @@ export default {
     },
     selectedVideo() {
       return this.srcvideo;
+    },
+    selectedImage() {
+      return this.srcimage;
     },
     selectedTypeVideo() {
       return this.typevideo;

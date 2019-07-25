@@ -8,18 +8,18 @@
       <v-flex lg4 md4 xs12 class="pl-4">
         <div>
           <div class="primary--text title font-weight-regular">{{item.titulo}}</div>
-          <div class="descricaoItem">Enviado: {{formatData(item.dataInclusao)}}</div>
+          <div class="descricaoItem">Created: {{formatData(item.dataInclusao)}}</div>
           <div class="descricaoItem">
-            Publicação: {{formatData(item.dataPublicacao)}}
+            From: {{formatData(item.dataPublicacao)}}
             <span
               v-if="item.dataFinal !== null"
-            >até {{formatData(item.dataFinal)}}</span>
+            >Until {{formatData(item.dataFinal)}}</span>
           </div>
 
           <v-chip v-for="tag in item.tagsVO" :key="tag.id" small>{{tag.nomeTag}}</v-chip>
 
           <div class="descricaoItem">
-            Link público:
+            Link:
             <router-link :to="{name: 'Public', query: { id: item.id }}" target="_blank">
               <span
                 class="font-weight-regular"
@@ -31,7 +31,7 @@
 
       <v-flex lg4 md5 xs12 class="pl-4">
         <br />
-        <label class="descricaoItem font-weight-regular">Descrição do vídeo</label>
+        <label class="descricaoItem font-weight-regular">Description</label>
         <div class="descricaoItem font-weight-light">{{item.descricao}}</div>
       </v-flex>
       <div class="float-button-padding">

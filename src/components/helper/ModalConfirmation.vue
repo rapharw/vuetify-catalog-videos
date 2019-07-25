@@ -10,13 +10,13 @@
         </span>
         <br />
         <br />
-        <span class="font-weight-light">Deseja realmente prosseguir?</span>
+        <span class="font-weight-light">Do you really want to proceed?</span>
       </v-card-text>
 
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn :color="color" round light flat outline @click="goBack">
-          <v-icon>arrow_back</v-icon>Voltar
+          <v-icon>arrow_back</v-icon>Back
         </v-btn>
 
         <v-btn :color="color" round @click="action">
