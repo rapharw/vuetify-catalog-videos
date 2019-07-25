@@ -11,7 +11,8 @@
         <BasicFormStepper :itemsStepper="arraySteps">
           <!-- Step 1 -->
           <div slot="stepper-content-1">
-            <vue-dropzone
+            <UploadStepDragDropFile :dropOptions="dropOptions"></UploadStepDragDropFile>
+            <!-- <vue-dropzone
               :useCustomSlot="true"
               id="dropzone"
               ref="dropzone"
@@ -26,13 +27,7 @@
                 <h3 class="dropzone-custom-title primary--text">Drag and drop to upload content!</h3>
                 <div class="subtitle">...or click to select a file from your computer</div>
               </div>
-            </vue-dropzone>
-            <v-progress-linear
-              v-if="progressBar > 0"
-              slot="stepper-content-1"
-              color="info"
-              v-model="progressBar"
-            ></v-progress-linear>
+            </vue-dropzone>-->
           </div>
 
           <!-- Step 2 -->
@@ -135,12 +130,14 @@ import BasicFormStepper from "@/components/basic/BStepper.vue";
 import CardTemplate from "@/templates/CardTemplate.vue";
 import vueDropzone from "vue2-dropzone";
 import HelperDatePicker from "@/components/helper/DatePicker.vue";
+import UploadStepDragDropFile from "@/views/upload/StepDragDropFile.vue";
 export default {
   components: {
     BasicFormStepper,
     vueDropzone,
     CardTemplate,
-    HelperDatePicker
+    HelperDatePicker,
+    UploadStepDragDropFile
   },
   mounted() {},
   data() {
@@ -179,12 +176,11 @@ export default {
   },
   methods: {
     afterComplete(data) {
-      this.file = data;
       console.log("afterComplete");
       console.log(data);
-      this.showStepper = true;
+      // this.showStepper = true;
 
-      this.srcvideo = JSON.parse(data.xhr.response).files.file;
+      this.srcvideo = data.src;
       this.typevideo = data.type;
     },
     removedFile(file, error, xhr) {
